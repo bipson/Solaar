@@ -284,6 +284,11 @@ def _feature_pointer_speed():
 					bytes_count=2,
 					label=_POINTER_SPEED[1], description=_POINTER_SPEED[2],
 					device_kind=_DK.mouse)
+def _feature_side_scroll():
+	return feature_toggle(_SIDE_SCROLL[0], _F.VERTICAL_SCROLLING,
+					label=_SIDE_SCROLL[1], description=_SIDE_SCROLL[2],
+					device_kind=_DK.mouse)
+
 #
 #
 #
@@ -326,9 +331,9 @@ FeatureSettings =  _SETTINGS_LIST(
 				lowres_smooth_scroll=_feature_lowres_smooth_scroll,
 				hires_smooth_invert=_feature_hires_smooth_invert,
 				hires_smooth_resolution=_feature_hires_smooth_resolution,
-				side_scroll=None,
 				dpi=_feature_adjustable_dpi,
 				pointer_speed=_feature_pointer_speed,
+				side_scroll=_feature_side_scroll,
 				hand_detection=None,
 				typing_illumination=None,
 				smart_shift=_feature_smart_shift,
